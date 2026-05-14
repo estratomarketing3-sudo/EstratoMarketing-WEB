@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Recursos — Estrato Marketing</title>
+<meta name="description" content="Biblioteca de recursos, sistemas, plantillas y automatizaciones para negocios locales que quieren crecer con IA y marketing digital."/>
+<link rel="canonical" href="https://estratomarketing.agency/recursos"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090B;--bg2:#0F0F12;--bg3:#141418;--bg4:#1A1A20;
+  --copper:#C8793A;--copper-l:#D98A4A;--copper-d:#9E5E2D;
+  --fg:#F4F1EC;--fg2:#A8A39A;--fg3:#5C5853;
+  --border:rgba(200,121,58,.12);--border2:rgba(244,241,236,.06);
+  --green:#22C55E;--radius:12px;
+  --font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-b);font-size:16px;line-height:1.6;overflow-x:hidden;opacity:0;animation:pagein .5s ease .05s forwards}
+@keyframes pagein{to{opacity:1}}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--copper-d);border-radius:2px}
+::selection{background:rgba(200,121,58,.25);color:var(--fg)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3,h4{font-family:var(--font-h);line-height:1.1;color:var(--fg)}
+p{color:var(--fg2)}
+.label{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-h);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);background:rgba(200,121,58,.07);border:1px solid var(--border);padding:6px 16px;border-radius:100px;margin-bottom:20px}
+.label::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--copper);flex-shrink:0;animation:blink 2.5s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border-radius:8px;font-family:var(--font-b);font-size:14px;font-weight:500;text-decoration:none;cursor:pointer;transition:all .22s;border:none;white-space:nowrap}
+.btn-copper{background:var(--copper);color:var(--bg)}
+.btn-copper:hover{background:var(--copper-l);transform:translateY(-2px);box-shadow:0 12px 32px rgba(200,121,58,.4)}
+.btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--border2)}
+.btn-ghost:hover{border-color:rgba(200,121,58,.4);color:var(--copper);transform:translateY(-2px)}
+
+/* ── NAVBAR ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:20px 0;transition:all .35s}
+#nav.s{background:rgba(9,9,11,.9);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:13px 0}
+.nav-i{display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{font-family:var(--font-h);font-size:17px;font-weight:700;color:var(--fg);text-decoration:none}
+.logo em{font-style:normal;color:var(--copper)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{color:var(--fg2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;position:relative}
+.nav-links a:hover,.nav-links a.active{color:var(--fg)}
+.nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--copper)}
+.nav-r{display:flex;gap:12px}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.burger span{display:block;width:22px;height:1.5px;background:var(--fg);border-radius:2px;transition:all .3s}
+.m-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:199;flex-direction:column;justify-content:center;align-items:center;gap:36px}
+.m-menu.on{display:flex}
+.m-menu a{font-family:var(--font-h);font-size:2rem;font-weight:700;color:var(--fg);text-decoration:none;transition:color .2s}
+.m-menu a:hover{color:var(--copper)}
+@media(max-width:768px){.nav-links,.nav-r .btn-ghost{display:none}.burger{display:flex}}
+
+/* ── HERO ── */
+.page-hero{padding:160px 0 100px;position:relative;overflow:hidden;text-align:center}
+.hero-bg-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(200,121,58,.07) 0%,transparent 65%);pointer-events:none}
+.hero-bg-grid{position:absolute;inset:0;opacity:.018;background-image:linear-gradient(var(--fg) 1px,transparent 1px),linear-gradient(90deg,var(--fg) 1px,transparent 1px);background-size:72px 72px;pointer-events:none}
+.page-hero h1{font-size:clamp(2.4rem,5vw,4rem);font-weight:800;margin-bottom:20px;position:relative;z-index:1}
+.page-hero p{font-size:1.1rem;max-width:540px;margin:0 auto 40px;position:relative;z-index:1}
+.hero-search{position:relative;max-width:480px;margin:0 auto;z-index:1}
+.hero-search input{width:100%;background:var(--bg2);border:1px solid var(--border2);border-radius:10px;padding:14px 20px 14px 48px;color:var(--fg);font-family:var(--font-b);font-size:15px;outline:none;transition:border-color .2s}
+.hero-search input:focus{border-color:rgba(200,121,58,.4)}
+.hero-search input::placeholder{color:var(--fg3)}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--fg3);font-size:18px;pointer-events:none}
+
+/* ── FILTER TABS ── */
+.filter-wrap{padding:48px 0 0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.filter-btn{background:transparent;border:1px solid var(--border2);color:var(--fg2);padding:8px 20px;border-radius:100px;font-size:13px;font-weight:500;cursor:pointer;transition:all .22s;font-family:var(--font-b)}
+.filter-btn:hover{border-color:rgba(200,121,58,.35);color:var(--fg)}
+.filter-btn.active{background:rgba(200,121,58,.1);border-color:var(--copper);color:var(--copper)}
+
+/* ── RESOURCES GRID ── */
+.resources-sec{padding:60px 0 120px}
+.res-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+
+/* Featured resource — full width */
+.res-card{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;overflow:hidden;transition:all .35s;display:flex;flex-direction:column;position:relative}
+.res-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(200,121,58,.3),transparent);opacity:0;transition:opacity .35s}
+.res-card:hover{transform:translateY(-6px);box-shadow:0 32px 64px rgba(0,0,0,.5);border-color:rgba(200,121,58,.2)}
+.res-card:hover::before{opacity:1}
+.res-card.featured{grid-column:1/-1;flex-direction:row;align-items:center}
+@media(max-width:700px){.res-card.featured{flex-direction:column}}
+.res-visual{background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:3rem;flex-shrink:0}
+.res-card:not(.featured) .res-visual{height:140px}
+.res-card.featured .res-visual{width:280px;height:240px;font-size:4rem}
+@media(max-width:700px){.res-card.featured .res-visual{width:100%;height:160px}}
+/* Visual background pattern per card */
+.res-visual{position:relative;overflow:hidden}
+.res-visual::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(200,121,58,.1),transparent 70%)}
+.res-body{padding:28px 32px;flex:1;display:flex;flex-direction:column}
+.res-card:not(.featured) .res-body{padding:24px 24px 28px}
+.res-meta{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.res-type{font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--copper);background:rgba(200,121,58,.08);border:1px solid var(--border);padding:3px 10px;border-radius:100px}
+.res-level{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3);background:rgba(244,241,236,.04);border:1px solid var(--border2);padding:3px 10px;border-radius:100px}
+.res-new{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green);background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);padding:3px 10px;border-radius:100px}
+.res-body h3{font-size:1.15rem;margin-bottom:8px;line-height:1.3;transition:color .2s}
+.res-card.featured .res-body h3{font-size:1.5rem}
+.res-card:hover .res-body h3{color:var(--copper)}
+.res-body p{font-size:13px;line-height:1.7;flex:1;margin-bottom:20px}
+.res-card.featured .res-body p{font-size:14px}
+.res-footer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.res-stats{display:flex;gap:16px}
+.res-stat{font-size:12px;color:var(--fg3);display:flex;align-items:center;gap:5px}
+.res-cta{font-size:13px;font-weight:600;color:var(--copper);display:flex;align-items:center;gap:6px;text-decoration:none;transition:gap .2s}
+.res-cta:hover{gap:10px}
+
+/* ── COMING SOON BANNER ── */
+.coming-sec{padding:0 0 80px}
+.coming-box{background:var(--bg2);border:1px solid var(--border2);border-radius:16px;padding:48px;text-align:center;position:relative;overflow:hidden}
+.coming-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:1px;background:linear-gradient(90deg,transparent,var(--copper),transparent)}
+.coming-box h3{font-size:1.4rem;margin-bottom:12px}
+.coming-box p{max-width:440px;margin:0 auto 28px;font-size:14px}
+.coming-items{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.coming-item{background:rgba(244,241,236,.04);border:1px solid var(--border2);padding:8px 16px;border-radius:8px;font-size:13px;color:var(--fg2)}
+
+/* ── NEWSLETTER ── */
+.nl-sec{padding:0 0 120px}
+.nl-box{background:linear-gradient(135deg,var(--bg2),rgba(200,121,58,.03));border:1px solid rgba(200,121,58,.2);border-radius:20px;padding:60px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.nl-text h3{font-size:1.6rem;margin-bottom:8px}
+.nl-text p{font-size:14px;max-width:380px}
+.nl-form{display:flex;gap:10px;flex-wrap:wrap}
+.nl-form input{background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:13px 18px;color:var(--fg);font-family:var(--font-b);font-size:14px;outline:none;width:260px;transition:border-color .2s}
+.nl-form input:focus{border-color:rgba(200,121,58,.4)}
+.nl-form input::placeholder{color:var(--fg3)}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border2);padding:48px 0 28px}
+.ft-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:32px}
+.ft-logo{font-family:var(--font-h);font-size:17px;font-weight:700}
+.ft-logo em{font-style:normal;color:var(--copper)}
+.ft-links{display:flex;gap:28px;flex-wrap:wrap}
+.ft-links a{font-size:13px;color:var(--fg3);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--copper)}
+.ft-bottom{border-top:1px solid var(--border2);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.ft-bottom p{font-size:12px;color:var(--fg3)}
+
+/* ── SCROLL REVEAL ── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="wrap nav-i">
+    <a href="estratomarketing.html" class="logo"><em>E</em>STRATO MARKETING</a>
+    <div class="nav-links">
+      <a href="estratomarketing.html">Inicio</a>
+      <a href="estratomarketing.html#sistema">El Sistema</a>
+      <a href="estratomarketing.html#servicios">Servicios</a>
+      <a href="blog.html">Blog</a>
+      <a href="recursos.html" class="active">Recursos</a>
+    </div>
+    <div class="nav-r">
+      <a href="estratomarketing.html#servicios" class="btn btn-ghost" style="padding:9px 18px;font-size:13px">Ver planes</a>
+      <a href="estratomarketing.html" class="btn btn-copper" style="padding:9px 18px;font-size:13px" onclick="event.preventDefault();window.opener?window.close():history.back()">Auditoría Gratis</a>
+    </div>
+    <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="m-menu" id="mmenu">
+  <a href="estratomarketing.html" onclick="closeMM()">Inicio</a>
+  <a href="blog.html" onclick="closeMM()">Blog</a>
+  <a href="recursos.html" onclick="closeMM()">Recursos</a>
+  <a href="estratomarketing.html" class="btn btn-copper" style="font-size:15px;padding:14px 32px">Auditoría Gratis</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-bg-grid"></div>
+  <div class="wrap">
+    <div class="rv">
+      <div class="label">Biblioteca de Recursos</div>
+      <h1>Herramientas para<br>crecer con intención</h1>
+      <p>Sistemas, plantillas y guías diseñadas para que los negocios locales implementen estrategias de crecimiento real — sin agencia, sin complicaciones.</p>
+      <div class="hero-search">
+        <span class="search-icon">⌕</span>
+        <input type="text" placeholder="Buscar recursos, guías, sistemas..." id="searchInput" oninput="filterResources(this.value)"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<div class="filter-wrap">
+  <div class="wrap">
+    <div class="filters rv">
+      <button class="filter-btn active" onclick="setFilter('all',this)">Todos</button>
+      <button class="filter-btn" onclick="setFilter('sistema',this)">Sistemas</button>
+      <button class="filter-btn" onclick="setFilter('plantilla',this)">Plantillas</button>
+      <button class="filter-btn" onclick="setFilter('guia',this)">Guías</button>
+      <button class="filter-btn" onclick="setFilter('prompt',this)">Prompts IA</button>
+      <button class="filter-btn" onclick="setFilter('automatizacion',this)">Automatizaciones</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESOURCES -->
+<section class="resources-sec">
+  <div class="wrap">
+    <div class="res-grid" id="resGrid">
+
+      <!-- FEATURED -->
+      <div class="res-card featured rv" data-type="sistema">
+        <div class="res-visual" style="background:linear-gradient(135deg,#0F0F12,#1A1A20)">
+          <span style="position:relative;z-index:1">⚙️</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta">
+            <span class="res-type">Sistema</span>
+            <span class="res-new">Destacado</span>
+            <span class="res-level">Avanzado</span>
+          </div>
+          <h3>Sistema Completo de Seguimiento de Leads para Negocios Locales</h3>
+          <p>Framework probado para capturar, calificar y dar seguimiento a cada prospecto sin perder ninguna oportunidad. Incluye flujo de WhatsApp, etapas de CRM y secuencias de seguimiento automatizadas. Listo para implementar en cualquier tipo de negocio local.</p>
+          <div class="res-footer">
+            <div class="res-stats">
+              <span class="res-stat">📥 2.4k descargas</span>
+              <span class="res-stat">⭐ 4.9</span>
+              <span class="res-stat">⏱ 15 min setup</span>
+            </div>
+            <a href="#" class="res-cta">Descargar gratis →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 1 -->
+      <div class="res-card rv" data-type="plantilla">
+        <div class="res-visual" style="background:linear-gradient(135deg,#0F1512,#141A18)">
+          <span style="position:relative;z-index:1">💬</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Plantilla</span><span class="res-level">Básico</span></div>
+          <h3>Pack de Mensajes WhatsApp para Primera Respuesta</h3>
+          <p>12 plantillas de respuesta inmediata para los primeros 5 minutos con un nuevo lead. Aumenta la tasa de conversación hasta 3x con el mensaje correcto en el momento correcto.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 1.8k</span><span class="res-stat">⭐ 4.8</span></div>
+            <a href="#" class="res-cta">Obtener →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="res-card rv" data-type="guia">
+        <div class="res-visual" style="background:linear-gradient(135deg,#100F12,#1A1520)">
+          <span style="position:relative;z-index:1">📍</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Guía</span><span class="res-new">Nuevo</span></div>
+          <h3>Guía Definitiva de Optimización Google Business Profile 2025</h3>
+          <p>Paso a paso para posicionarte en el top 3 del Local Pack. Desde la estructura de la ficha hasta la estrategia de reseñas y publicaciones semanales.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 3.1k</span><span class="res-stat">⭐ 5.0</span></div>
+            <a href="#" class="res-cta">Descargar →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="res-card rv" data-type="prompt">
+        <div class="res-visual" style="background:linear-gradient(135deg,#0F1212,#141A1A)">
+          <span style="position:relative;z-index:1">🤖</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Prompt IA</span><span class="res-level">Intermedio</span></div>
+          <h3>Prompt Pack para Agente de Atención con IA en WhatsApp</h3>
+          <p>30 prompts probados para configurar un agente de IA que califica leads, responde preguntas frecuentes y agenda citas automáticamente. Compatible con ChatGPT y Claude.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 967</span><span class="res-stat">⭐ 4.9</span></div>
+            <a href="#" class="res-cta">Obtener →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="res-card rv" data-type="sistema">
+        <div class="res-visual" style="background:linear-gradient(135deg,#121012,#1A1418)">
+          <span style="position:relative;z-index:1">🎯</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Sistema</span><span class="res-level">Avanzado</span></div>
+          <h3>Funnel Base para Negocios Locales: Del Anuncio a la Cita</h3>
+          <p>Arquitectura completa de funnel: anuncio → landing → formulario → WhatsApp → seguimiento → cierre. Incluye copy, estructura y métricas de control para cada etapa.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 1.2k</span><span class="res-stat">⭐ 4.7</span></div>
+            <a href="#" class="res-cta">Descargar →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="res-card rv" data-type="automatizacion">
+        <div class="res-visual" style="background:linear-gradient(135deg,#0F1210,#141A14)">
+          <span style="position:relative;z-index:1">⭐</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Automatización</span><span class="res-new">Popular</span></div>
+          <h3>Sistema Automatizado de Generación de Reseñas Google</h3>
+          <p>Flujo completo para solicitar reseñas de forma automática después de cada servicio. Integración con WhatsApp y email. Resultado promedio: +40 reseñas en los primeros 60 días.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 2.2k</span><span class="res-stat">⭐ 4.9</span></div>
+            <a href="#" class="res-cta">Ver sistema →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="res-card rv" data-type="guia">
+        <div class="res-visual" style="background:linear-gradient(135deg,#121010,#1A1414)">
+          <span style="position:relative;z-index:1">📊</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Guía</span><span class="res-level">Básico</span></div>
+          <h3>Cómo medir el ROI de tus campañas de publicidad local</h3>
+          <p>Guía práctica para entender qué métricas importan, cómo configurar Google Analytics 4 para negocios locales y qué reportar mes a mes para tomar mejores decisiones.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 1.5k</span><span class="res-stat">⭐ 4.6</span></div>
+            <a href="#" class="res-cta">Descargar →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 7 -->
+      <div class="res-card rv" data-type="plantilla">
+        <div class="res-visual" style="background:linear-gradient(135deg,#0F1215,#14181A)">
+          <span style="position:relative;z-index:1">📝</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Plantilla</span><span class="res-level">Intermedio</span></div>
+          <h3>Plantilla de Auditoría Digital para Negocios Locales</h3>
+          <p>Diagnóstico de 47 puntos para evaluar la presencia digital de cualquier negocio: Google, web, redes, ads y automatización. Ideal para identificar oportunidades de crecimiento.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 880</span><span class="res-stat">⭐ 5.0</span></div>
+            <a href="#" class="res-cta">Obtener →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 8 -->
+      <div class="res-card rv" data-type="prompt">
+        <div class="res-visual" style="background:linear-gradient(135deg,#121215,#18181A)">
+          <span style="position:relative;z-index:1">✍️</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Prompt IA</span><span class="res-new">Nuevo</span></div>
+          <h3>Prompts para Crear Copy de Ads que Convierte en Negocios Locales</h3>
+          <p>20 prompts especializados para generar anuncios de Facebook e Instagram adaptados a negocios locales. Incluye variaciones por industria: clínicas, restaurantes, servicios profesionales.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 740</span><span class="res-stat">⭐ 4.8</span></div>
+            <a href="#" class="res-cta">Obtener →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 9 -->
+      <div class="res-card rv" data-type="automatizacion">
+        <div class="res-visual" style="background:linear-gradient(135deg,#101512,#14201A)">
+          <span style="position:relative;z-index:1">🔄</span>
+        </div>
+        <div class="res-body">
+          <div class="res-meta"><span class="res-type">Automatización</span><span class="res-level">Avanzado</span></div>
+          <h3>Flujo de Reactivación de Leads Fríos con IA</h3>
+          <p>Secuencia automatizada de 5 pasos para recuperar prospectos que no convirtieron en el primer contacto. Tasa de reactivación promedio: 18%. Compatible con Make y Zapier.</p>
+          <div class="res-footer">
+            <div class="res-stats"><span class="res-stat">📥 560</span><span class="res-stat">⭐ 4.7</span></div>
+            <a href="#" class="res-cta">Ver flujo →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON -->
+<section class="coming-sec">
+  <div class="wrap">
+    <div class="coming-box rv">
+      <div class="label">En camino</div>
+      <h3>Más recursos en desarrollo</h3>
+      <p>Estamos documentando los sistemas y procesos que usamos con nuestros clientes. Sé el primero en recibirlos.</p>
+      <div class="coming-items">
+        <span class="coming-item">🎯 Kit de Segmentación para Meta Ads</span>
+        <span class="coming-item">📱 Plantilla de Perfil Instagram para Negocios Locales</span>
+        <span class="coming-item">🗺️ Guía SEO Local Avanzado 2025</span>
+        <span class="coming-item">📧 Secuencia de Email para Nutrir Leads</span>
+        <span class="coming-item">🤖 Configuración de ChatBot para Clínicas</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="nl-sec">
+  <div class="wrap">
+    <div class="nl-box rv">
+      <div class="nl-text">
+        <h3>Recibe recursos antes que nadie</h3>
+        <p>Cada dos semanas enviamos un recurso nuevo directamente a tu correo. Sin spam, sin relleno — solo sistemas que funcionan.</p>
+      </div>
+      <div class="nl-form">
+        <input type="email" placeholder="tu@correo.com"/>
+        <button class="btn btn-copper">Suscribirme</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="ft-inner">
+      <div class="ft-logo"><em>E</em>STRATO MARKETING</div>
+      <div class="ft-links">
+        <a href="estratomarketing.html">Inicio</a>
+        <a href="blog.html">Blog</a>
+        <a href="recursos.html">Recursos</a>
+        <a href="estratomarketing.html#servicios">Servicios</a>
+        <a href="estratomarketing.html#resultados">Resultados</a>
+        <a href="https://wa.me/5216141425512">WhatsApp</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2026 Estrato Marketing. Todos los derechos reservados.</p>
+      <p>Sistemas de marketing para negocios locales · México</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>50),{passive:true});
+// Mobile menu
+document.getElementById('burger').addEventListener('click',()=>document.getElementById('mmenu').classList.toggle('on'));
+function closeMM(){document.getElementById('mmenu').classList.remove('on')}
+// Scroll reveal
+const ro=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);ro.unobserve(e.target)}})},{threshold:.08});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// Filter
+let activeFilter='all';
+function setFilter(f,btn){
+  activeFilter=f;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  filterResources(document.getElementById('searchInput').value);
+}
+function filterResources(query){
+  const q=query.toLowerCase();
+  document.querySelectorAll('.res-card').forEach(card=>{
+    const type=card.dataset.type||'';
+    const text=card.textContent.toLowerCase();
+    const matchFilter=activeFilter==='all'||type===activeFilter;
+    const matchSearch=!q||text.includes(q);
+    card.style.display=(matchFilter&&matchSearch)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
