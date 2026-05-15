@@ -1,0 +1,746 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Agenda tu Auditoría — Estrato Marketing</title>
+<meta name="description" content="Agenda una auditoría gratuita con Estrato Marketing. Analizamos tu negocio y te entregamos un plan de crecimiento digital personalizado. Sin compromiso."/>
+<link rel="canonical" href="https://estratomarketing.agency/agendar"/>
+<meta property="og:title" content="Agenda tu Auditoría Gratuita — Estrato Marketing"/>
+<meta property="og:description" content="Sistema de precalificación inteligente. Cuéntanos sobre tu negocio y te preparamos una estrategia personalizada."/>
+<meta property="og:url" content="https://estratomarketing.agency/agendar"/>
+<meta property="og:image" content="https://estratomarketing.agency/og-image.jpg"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HCVBF19TNG"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HCVBF19TNG');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#09090B;--bg2:#0F0F12;--bg3:#141418;--bg4:#1A1A20;
+  --copper:#C8793A;--copper-l:#D98A4A;--copper-d:#9E5E2D;
+  --fg:#F4F1EC;--fg2:#A8A39A;--fg3:#5C5853;
+  --border:rgba(200,121,58,.12);--border2:rgba(244,241,236,.06);
+  --green:#22C55E;--red:#EF4444;
+  --font-h:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-b);font-size:16px;line-height:1.6;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--copper-d);border-radius:2px}
+::selection{background:rgba(200,121,58,.25);color:var(--fg)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--font-h);line-height:1.15;color:var(--fg)}
+p{color:var(--fg2);line-height:1.75}
+
+/* ── NAVBAR ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 0;background:rgba(9,9,11,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border2)}
+.nav-i{display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--font-h);font-size:17px;font-weight:700;color:var(--fg);text-decoration:none}
+.logo em{font-style:normal;color:var(--copper)}
+.nav-back{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--fg3);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--copper)}
+.nav-back svg{transition:transform .2s}
+.nav-back:hover svg{transform:translateX(-3px)}
+
+/* ── PAGE LAYOUT ── */
+.page{display:grid;grid-template-columns:1fr 480px;min-height:100vh;padding-top:60px}
+@media(max-width:900px){.page{grid-template-columns:1fr}}
+
+/* ── LEFT PANEL ── */
+.left-panel{padding:80px 60px 80px 28px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+@media(max-width:900px){.left-panel{padding:60px 28px 40px;text-align:center}}
+.left-glow{position:absolute;top:-100px;left:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(200,121,58,.06) 0%,transparent 65%);pointer-events:none}
+.left-grid{position:absolute;inset:0;opacity:.015;background-image:linear-gradient(var(--fg) 1px,transparent 1px),linear-gradient(90deg,var(--fg) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--copper);margin-bottom:20px}
+.eyebrow::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--copper);animation:blink 2.5s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.left-panel h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;margin-bottom:20px;line-height:1.08}
+.left-panel h1 em{font-style:normal;color:var(--copper)}
+.left-panel>p{font-size:1rem;max-width:420px;margin-bottom:40px}
+@media(max-width:900px){.left-panel>p{margin:0 auto 32px}}
+/* Proof points */
+.proof-items{display:flex;flex-direction:column;gap:14px}
+@media(max-width:900px){.proof-items{display:none}}
+.proof-item{display:flex;align-items:center;gap:14px}
+.proof-icon{width:38px;height:38px;border-radius:10px;background:rgba(200,121,58,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.proof-text strong{display:block;font-size:13px;font-weight:600;color:var(--fg)}
+.proof-text span{font-size:12px;color:var(--fg3)}
+
+/* ── RIGHT PANEL — FORM ── */
+.right-panel{background:var(--bg2);border-left:1px solid var(--border2);padding:80px 48px;overflow-y:auto;position:relative}
+@media(max-width:900px){.right-panel{border-left:none;border-top:1px solid var(--border2);padding:48px 28px}}
+@media(max-width:480px){.right-panel{padding:36px 20px}}
+
+/* ── PROGRESS ── */
+.progress-wrap{margin-bottom:36px}
+.progress-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.progress-label{font-size:12px;font-weight:600;color:var(--copper);letter-spacing:.06em}
+.progress-count{font-size:12px;color:var(--fg3)}
+.progress-track{height:3px;background:var(--bg4);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--copper-d),var(--copper));border-radius:2px;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.microcopy{font-size:13px;color:var(--copper);font-style:italic;margin-top:8px;min-height:20px;transition:opacity .3s}
+
+/* ── STEPS ── */
+.step{display:none;animation:stepIn .3s ease}
+.step.active{display:block}
+@keyframes stepIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.step-title{font-family:var(--font-h);font-size:1.4rem;font-weight:700;margin-bottom:6px}
+.step-sub{font-size:14px;color:var(--fg2);margin-bottom:28px;line-height:1.6}
+
+/* ── SERVICE CARDS (multi-select) ── */
+.service-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+@media(max-width:420px){.service-cards{grid-template-columns:1fr}}
+.service-card{border:1.5px solid var(--border2);border-radius:12px;padding:16px 14px;cursor:pointer;transition:all .22s;user-select:none;position:relative;background:var(--bg3)}
+.service-card:hover{border-color:rgba(200,121,58,.35);background:rgba(200,121,58,.04)}
+.service-card.selected{border-color:var(--copper);background:rgba(200,121,58,.08)}
+.service-card.selected::after{content:'✓';position:absolute;top:10px;right:12px;width:20px;height:20px;border-radius:50%;background:var(--copper);color:var(--bg);font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:20px;text-align:center}
+.sc-icon{font-size:22px;margin-bottom:8px;display:block}
+.sc-name{font-family:var(--font-h);font-size:13px;font-weight:600;color:var(--fg);margin-bottom:2px}
+.sc-desc{font-size:11px;color:var(--fg3)}
+
+/* ── RADIO OPTIONS ── */
+.radio-list{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.radio-opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--border2);border-radius:10px;cursor:pointer;transition:all .22s;user-select:none;background:var(--bg3)}
+.radio-opt:hover{border-color:rgba(200,121,58,.3);background:rgba(200,121,58,.04)}
+.radio-opt.selected{border-color:var(--copper);background:rgba(200,121,58,.08)}
+.radio-dot{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--border2);flex-shrink:0;position:relative;transition:all .22s}
+.radio-opt.selected .radio-dot{border-color:var(--copper)}
+.radio-opt.selected .radio-dot::after{content:'';position:absolute;inset:4px;border-radius:50%;background:var(--copper)}
+.radio-label{font-size:14px;color:var(--fg2);transition:color .22s}
+.radio-opt.selected .radio-label{color:var(--fg)}
+
+/* ── CHECKBOX OPTIONS ── */
+.check-list{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.check-opt{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid var(--border2);border-radius:10px;cursor:pointer;transition:all .22s;user-select:none;background:var(--bg3)}
+.check-opt:hover{border-color:rgba(200,121,58,.3)}
+.check-opt.selected{border-color:var(--copper);background:rgba(200,121,58,.08)}
+.check-box{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--border2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .22s;font-size:10px;color:transparent}
+.check-opt.selected .check-box{background:var(--copper);border-color:var(--copper);color:var(--bg)}
+.check-label{font-size:14px;color:var(--fg2);transition:color .22s}
+.check-opt.selected .check-label{color:var(--fg)}
+
+/* ── TEXT INPUTS ── */
+.field{margin-bottom:16px}
+.field label{display:block;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--fg3);margin-bottom:8px}
+.field input,.field textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:13px 16px;color:var(--fg);font-family:var(--font-b);font-size:15px;transition:border-color .2s;outline:none}
+.field input:focus,.field textarea:focus{border-color:rgba(200,121,58,.5);box-shadow:0 0 0 3px rgba(200,121,58,.08)}
+.field input::placeholder,.field textarea::placeholder{color:var(--fg3)}
+.field input.error{border-color:var(--red)}
+.error-msg{font-size:12px;color:var(--red);margin-top:5px;display:none}
+.field.has-error .error-msg{display:block}
+.fields-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.fields-2{grid-template-columns:1fr}}
+.optional-label{font-size:11px;color:var(--fg3);margin-left:6px;font-weight:400;text-transform:none;letter-spacing:0}
+
+/* ── NAV BUTTONS ── */
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:28px;padding-top:24px;border-top:1px solid var(--border2)}
+.btn-back{background:none;border:1px solid var(--border2);color:var(--fg3);padding:11px 22px;border-radius:8px;font-size:14px;cursor:pointer;transition:all .2s;font-family:var(--font-b);display:flex;align-items:center;gap:8px}
+.btn-back:hover{border-color:rgba(200,121,58,.3);color:var(--fg)}
+.btn-next{display:inline-flex;align-items:center;gap:8px;background:var(--copper);color:var(--bg);border:none;padding:13px 28px;border-radius:8px;font-family:var(--font-b);font-size:14px;font-weight:600;cursor:pointer;transition:all .22s}
+.btn-next:hover{background:var(--copper-l);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,121,58,.4)}
+.btn-next:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.btn-submit{background:var(--copper);color:var(--bg);border:none;padding:15px 32px;border-radius:8px;font-family:var(--font-h);font-size:15px;font-weight:700;cursor:pointer;transition:all .22s;width:100%;display:flex;align-items:center;justify-content:center;gap:10px}
+.btn-submit:hover{background:var(--copper-l);transform:translateY(-1px);box-shadow:0 8px 24px rgba(200,121,58,.4)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;box-shadow:none}
+
+/* ── SERVICE SECTION HEADER ── */
+.svc-section-header{display:flex;align-items:center;gap:10px;margin-bottom:16px;padding:10px 14px;background:rgba(200,121,58,.06);border:1px solid var(--border);border-radius:8px}
+.svc-section-icon{font-size:18px}
+.svc-section-name{font-family:var(--font-h);font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--copper)}
+
+/* ── RESULT SCREENS ── */
+.result-screen{display:none;text-align:center;padding:20px 0}
+.result-screen.show{display:block;animation:stepIn .4s ease}
+.result-icon{width:72px;height:72px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px}
+.result-icon.hot{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.25)}
+.result-icon.warm{background:rgba(200,121,58,.12);border:1px solid var(--border)}
+.result-icon.cold{background:rgba(244,241,236,.06);border:1px solid var(--border2)}
+.result-screen h3{font-family:var(--font-h);font-size:1.5rem;font-weight:700;margin-bottom:12px}
+.result-screen p{font-size:14px;max-width:360px;margin:0 auto 28px;line-height:1.8}
+.result-actions{display:flex;flex-direction:column;gap:10px;max-width:320px;margin:0 auto}
+.btn-wa{display:flex;align-items:center;justify-content:center;gap:10px;background:#25D366;color:#fff;padding:14px 24px;border-radius:8px;font-family:var(--font-b);font-size:14px;font-weight:600;text-decoration:none;transition:all .22s}
+.btn-wa:hover{background:#1ebe5b;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3)}
+.btn-outline-copper{display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;border:1px solid var(--border);color:var(--fg2);padding:12px 24px;border-radius:8px;font-family:var(--font-b);font-size:13px;text-decoration:none;transition:all .22s}
+.btn-outline-copper:hover{border-color:var(--copper);color:var(--copper)}
+.score-badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.score-hot{background:rgba(239,68,68,.1);color:#ef4444;border:1px solid rgba(239,68,68,.2)}
+.score-warm{background:rgba(200,121,58,.1);color:var(--copper);border:1px solid var(--border)}
+.score-cold{background:rgba(244,241,236,.06);color:var(--fg3);border:1px solid var(--border2)}
+/* Resource links for cold */
+.resource-links{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.resource-link{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;text-decoration:none;color:var(--fg2);font-size:13px;transition:all .2s}
+.resource-link:hover{border-color:rgba(200,121,58,.25);color:var(--fg)}
+.resource-link-icon{font-size:16px}
+
+/* ── FOOTER ── */
+footer{background:var(--bg2);border-top:1px solid var(--border2);padding:28px 0}
+.ft-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-bottom p{font-size:12px;color:var(--fg3)}
+.ft-bottom a{font-size:12px;color:var(--fg3);text-decoration:none;transition:color .2s}
+.ft-bottom a:hover{color:var(--copper)}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="nav">
+  <div class="wrap nav-i">
+    <a href="/" class="logo"><em>E</em>STRATO MARKETING</a>
+    <a href="/" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Volver al inicio
+    </a>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="page">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+    <div class="left-glow"></div>
+    <div class="left-grid"></div>
+    <div style="position:relative;z-index:1">
+      <div class="eyebrow">Auditoría Gratuita</div>
+      <h1>Cuéntanos sobre<br>tu negocio.<br>Te ayudamos a <em>crecer.</em></h1>
+      <p>En menos de 5 minutos analizamos tu situación y te preparamos un plan de acción personalizado. Sin costo, sin compromiso.</p>
+      <div class="proof-items">
+        <div class="proof-item">
+          <div class="proof-icon">⏱</div>
+          <div class="proof-text"><strong>5 minutos</strong><span>Es todo lo que toma completar el formulario</span></div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">🎯</div>
+          <div class="proof-text"><strong>Plan personalizado</strong><span>No plantillas — estrategia para tu negocio específico</span></div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">🔒</div>
+          <div class="proof-text"><strong>100% confidencial</strong><span>Tu información nunca se comparte con terceros</span></div>
+        </div>
+        <div class="proof-item">
+          <div class="proof-icon">💬</div>
+          <div class="proof-text"><strong>Respuesta en 24h</strong><span>Te contactamos por WhatsApp con tu diagnóstico</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap" id="progressWrap">
+      <div class="progress-meta">
+        <span class="progress-label" id="progressLabel">Paso 1 de 3</span>
+        <span class="progress-count" id="progressPct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+      <div class="microcopy" id="microcopy"></div>
+    </div>
+
+    <!-- FORM STEPS -->
+    <div id="formSteps">
+
+      <!-- STEP 1 — Service selection -->
+      <div class="step active" id="step1">
+        <div class="step-title">¿En qué te gustaría recibir ayuda?</div>
+        <div class="step-sub">Puedes seleccionar uno o varios servicios. Personalizaremos las preguntas según tu selección.</div>
+        <div class="service-cards" id="serviceCards">
+          <div class="service-card" data-service="gbm" onclick="toggleService(this)">
+            <span class="sc-icon">📍</span>
+            <div class="sc-name">Ficha de Google</div>
+            <div class="sc-desc">Google Business Profile</div>
+          </div>
+          <div class="service-card" data-service="web" onclick="toggleService(this)">
+            <span class="sc-icon">🌐</span>
+            <div class="sc-name">Web Personalizada</div>
+            <div class="sc-desc">Sitio o landing page</div>
+          </div>
+          <div class="service-card" data-service="ads" onclick="toggleService(this)">
+            <span class="sc-icon">📣</span>
+            <div class="sc-name">Meta & Google Ads</div>
+            <div class="sc-desc">Publicidad digital</div>
+          </div>
+          <div class="service-card" data-service="ia" onclick="toggleService(this)">
+            <span class="sc-icon">🤖</span>
+            <div class="sc-name">IA + WhatsApp 24/7</div>
+            <div class="sc-desc">Automatización inteligente</div>
+          </div>
+        </div>
+        <div id="step1-error" style="font-size:13px;color:var(--red);display:none;margin-bottom:16px">Selecciona al menos un servicio para continuar.</div>
+        <div class="step-nav" style="border-top:none;padding-top:0;justify-content:flex-end">
+          <button class="btn-next" onclick="goNext()">Continuar <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 2 — Dynamic service questions -->
+      <div class="step" id="step2">
+        <div class="step-title" id="step2-title">Cuéntanos más sobre tu situación</div>
+        <div class="step-sub" id="step2-sub">Esto nos ayuda a entender mejor tu negocio y preparar recomendaciones más precisas.</div>
+        <div id="step2-questions"></div>
+        <div class="step-nav">
+          <button class="btn-back" onclick="goBack(2)">← Atrás</button>
+          <button class="btn-next" onclick="goNext()">Continuar <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
+      </div>
+
+      <!-- STEP 3 — Contact info -->
+      <div class="step" id="step3">
+        <div class="step-title">Ya casi terminamos ✦</div>
+        <div class="step-sub">Solo necesitamos algunos datos para enviarte tu plan personalizado por WhatsApp.</div>
+        <div class="fields-2">
+          <div class="field" id="field-name">
+            <label>Nombre completo</label>
+            <input type="text" id="f-name" placeholder="Tu nombre"/>
+            <div class="error-msg">Este campo es obligatorio</div>
+          </div>
+          <div class="field" id="field-biz">
+            <label>Nombre del negocio</label>
+            <input type="text" id="f-biz" placeholder="Mi Negocio"/>
+            <div class="error-msg">Este campo es obligatorio</div>
+          </div>
+        </div>
+        <div class="fields-2">
+          <div class="field" id="field-wa">
+            <label>WhatsApp</label>
+            <input type="tel" id="f-wa" placeholder="+52 614 000 0000"/>
+            <div class="error-msg">Este campo es obligatorio</div>
+          </div>
+          <div class="field">
+            <label>Ciudad</label>
+            <input type="text" id="f-city" placeholder="Chihuahua, México"/>
+          </div>
+        </div>
+        <div class="field">
+          <label>Correo electrónico</label>
+          <input type="email" id="f-email" placeholder="tu@correo.com"/>
+        </div>
+        <div class="fields-2">
+          <div class="field">
+            <label>Sitio web <span class="optional-label">(opcional)</span></label>
+            <input type="text" id="f-web" placeholder="www.minegocio.com"/>
+          </div>
+          <div class="field">
+            <label>Redes sociales <span class="optional-label">(opcional)</span></label>
+            <input type="text" id="f-social" placeholder="@minegocio"/>
+          </div>
+        </div>
+        <div class="step-nav">
+          <button class="btn-back" onclick="goBack(3)">← Atrás</button>
+          <button class="btn-submit" id="submitBtn" onclick="submitForm()">
+            <span id="submitText">Enviar y obtener mi plan →</span>
+          </button>
+        </div>
+      </div>
+
+    </div><!-- /formSteps -->
+
+    <!-- RESULT SCREENS -->
+    <div id="resultHot" class="result-screen">
+      <div class="result-icon hot">🔥</div>
+      <div class="score-badge score-hot">🔥 Lead Prioritario</div>
+      <h3>Tu negocio es una excelente oportunidad</h3>
+      <p>Tu perfil encaja perfectamente con los negocios que más crecen con nuestro sistema. Te contactaremos en las próximas horas por WhatsApp para coordinar tu auditoría estratégica.</p>
+      <div class="result-actions">
+        <a id="hotWaLink" href="#" class="btn-next" style="text-decoration:none;justify-content:center">💬 Escribir por WhatsApp ahora</a>
+        <a href="/" class="btn-outline-copper">← Volver al inicio</a>
+      </div>
+    </div>
+
+    <div id="resultWarm" class="result-screen">
+      <div class="result-icon warm">✓</div>
+      <div class="score-badge score-warm">✦ Solicitud recibida</div>
+      <h3>Solicitud enviada con éxito</h3>
+      <p>Revisaremos tu información y te contactaremos pronto por WhatsApp para conocer más sobre tu negocio y presentarte opciones concretas.</p>
+      <div class="result-actions">
+        <a id="warmWaLink" href="#" class="btn-wa">💬 Confirmar por WhatsApp</a>
+        <a href="/recursos.html" class="btn-outline-copper">Ver recursos gratuitos</a>
+      </div>
+    </div>
+
+    <div id="resultCold" class="result-screen">
+      <div class="result-icon cold">📋</div>
+      <div class="score-badge score-cold">Solicitud registrada</div>
+      <h3>Gracias por compartir tu información</h3>
+      <p>En este momento quizá no somos la mejor opción para lo que necesitas, pero queremos ayudarte con recursos gratuitos que pueden ser útiles ahora mismo.</p>
+      <div class="resource-links">
+        <a href="/recursos.html" class="resource-link"><span class="resource-link-icon">📥</span>Guía gratuita: Optimiza tu Google Maps</a>
+        <a href="/blog.html" class="resource-link"><span class="resource-link-icon">📖</span>Blog: Estrategias para negocios locales</a>
+        <a href="/recursos.html" class="resource-link"><span class="resource-link-icon">🤖</span>Prompts de IA para tu negocio</a>
+      </div>
+      <div class="result-actions">
+        <a href="https://wa.me/5216141425512?text=Hola%2C%20tengo%20preguntas%20sobre%20marketing%20digital" class="btn-outline-copper">💬 Hacer una pregunta por WhatsApp</a>
+        <a href="/" class="btn-outline-copper" style="margin-top:4px">← Volver al inicio</a>
+      </div>
+    </div>
+
+  </div><!-- /right-panel -->
+</div><!-- /page -->
+
+<footer>
+  <div class="wrap">
+    <div class="ft-bottom">
+      <p>© 2026 Estrato Marketing. Todos los derechos reservados.</p>
+      <div style="display:flex;gap:20px">
+        <a href="/">Inicio</a>
+        <a href="/#servicios">Servicios</a>
+        <a href="/blog.html">Blog</a>
+        <a href="https://wa.me/5216141425512">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── SUPABASE ──
+const SUPABASE_URL  = 'https://zzjqnawcwevwyzpcxebi.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6anFuYXdjd2V2d3l6cGN4ZWJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NTI0MDUsImV4cCI6MjA5NDMyODQwNX0.xfeYBIXy65evEFXyMjp9o6Ek1AvG4wn6z3TwVrjqWNI';
+
+async function saveLead(payload){
+  try{
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON,'Authorization':`Bearer ${SUPABASE_ANON}`,'Prefer':'return=minimal'},
+      body:JSON.stringify(payload)
+    });
+    return res.ok;
+  }catch(e){console.warn('Supabase error:',e);return false;}
+}
+
+// ── UTM PARAMS ──
+function getUTM(){
+  const p = new URLSearchParams(window.location.search);
+  return{
+    utm_source  : p.get('utm_source')||'',
+    utm_medium  : p.get('utm_medium')||'',
+    utm_campaign: p.get('utm_campaign')||'',
+    source      : document.referrer||'direct'
+  };
+}
+
+// ── PRESELECT FROM URL ──
+// /agendar?service=web|gbm|ads|ia or hash #web etc
+function preselectFromURL(){
+  const path = window.location.pathname;
+  const search = new URLSearchParams(window.location.search);
+  const svc = search.get('service') || path.split('/').pop();
+  const map = {web:'web',gbm:'gbm',ads:'ads',ia:'ia'};
+  if(map[svc]){
+    const card = document.querySelector(`.service-card[data-service="${map[svc]}"]`);
+    if(card) card.classList.add('selected');
+  }
+}
+
+// ── STATE ──
+const state = {
+  currentStep: 1,
+  totalSteps: 3,
+  selectedServices: [],
+  answers: {},      // {gbm_verified: 'Sí', web_goal: [...], ...}
+  contact: {},
+  score: 0,
+  temperature: '',
+};
+
+const MICROCOPY = [
+  '',
+  'Perfecto, esto nos ayuda a entender mejor tu negocio.',
+  'Queremos darte recomendaciones más precisas.',
+  'Ya casi terminamos. Solo unos datos finales.',
+];
+
+// ── SERVICE TOGGLE ──
+function toggleService(el){
+  el.classList.toggle('selected');
+  state.selectedServices = [...document.querySelectorAll('.service-card.selected')].map(c=>c.dataset.service);
+  document.getElementById('step1-error').style.display='none';
+  // GA4
+  gtag('event','service_toggle',{service:el.dataset.service,selected:el.classList.contains('selected')});
+}
+
+// ── DYNAMIC QUESTIONS BUILDER ──
+const SERVICE_QUESTIONS = {
+  gbm: {
+    label:'📍 Ficha de Google',
+    questions:[
+      {id:'gbm_verified', type:'radio', q:'¿Tu ficha de Google ya está verificada?', opts:['Sí','No','No estoy seguro'], score:{Sí:1,No:0,'No estoy seguro':0}},
+      {id:'gbm_goal',     type:'check', q:'¿Qué deseas mejorar?', opts:['Más llamadas','Más visitas','Más reseñas','Mejor posicionamiento local'], score:{multiple:1}},
+      {id:'gbm_reviews',  type:'radio', q:'¿Cuántas reseñas tienes actualmente?', opts:['0–5','5–20','20+'], score:{'0–5':0,'5–20':1,'20+':2}},
+      {id:'gbm_seo',      type:'radio', q:'¿Ya trabajas SEO local?', opts:['Sí','No'], score:{Sí:2,No:0}},
+    ]
+  },
+  web: {
+    label:'🌐 Web Personalizada',
+    questions:[
+      {id:'web_has',      type:'radio', q:'¿Ya tienes sitio web?', opts:['Sí','No'], score:{Sí:1,No:0}},
+      {id:'web_goal',     type:'check', q:'¿Qué buscas lograr?', opts:['Más clientes','Mejor imagen profesional','Reservas/agendamientos','Automatización','Información profesional'], score:{multiple:1}},
+      {id:'web_branding', type:'radio', q:'¿Tienes branding o logo?', opts:['Sí','Parcialmente','No'], score:{Sí:2,Parcialmente:1,No:0}},
+      {id:'web_urgency',  type:'radio', q:'¿Qué tan urgente es este proyecto?', opts:['Esta semana','Este mes','Solo explorando'], score:{'Esta semana':3,'Este mes':2,'Solo explorando':0}},
+    ]
+  },
+  ads: {
+    label:'📣 Meta & Google Ads',
+    questions:[
+      {id:'ads_active',    type:'radio', q:'¿Actualmente corres anuncios?', opts:['Sí','No'], score:{Sí:2,No:0}},
+      {id:'ads_goal',      type:'radio', q:'¿Cuál es tu objetivo principal?', opts:['Generar leads','Ventas','Branding','Mensajes WhatsApp'], score:{'Generar leads':2,Ventas:2,Branding:1,'Mensajes WhatsApp':2}},
+      {id:'ads_landing',   type:'radio', q:'¿Ya tienes landing page o sitio web?', opts:['Sí','No'], score:{Sí:1,No:0}},
+      {id:'ads_budget',    type:'radio', q:'¿Cuál sería tu presupuesto aproximado para campañas?', opts:['$3k–$10k MXN','$10k–$30k MXN','$30k+ MXN'], score:{'$3k–$10k MXN':1,'$10k–$30k MXN':2,'$30k+ MXN':3}},
+    ]
+  },
+  ia: {
+    label:'🤖 IA + WhatsApp 24/7',
+    questions:[
+      {id:'ia_wa',         type:'radio', q:'¿Ya utilizas WhatsApp Business?', opts:['Sí','No'], score:{Sí:1,No:0}},
+      {id:'ia_automate',   type:'check', q:'¿Qué deseas automatizar?', opts:['Respuestas automáticas','Seguimiento de clientes','Cotizaciones','Agendamiento','Atención 24/7'], score:{multiple:1}},
+      {id:'ia_volume',     type:'radio', q:'¿Cuántos mensajes recibes aproximadamente?', opts:['Pocos','Moderados','Muchos'], score:{Pocos:0,Moderados:1,Muchos:2}},
+      {id:'ia_team',       type:'radio', q:'¿Tienes equipo de ventas o atención?', opts:['Sí','No'], score:{Sí:1,No:0}},
+    ]
+  }
+};
+
+function buildStep2(){
+  const container = document.getElementById('step2-questions');
+  container.innerHTML = '';
+  const svcs = state.selectedServices;
+
+  svcs.forEach((svc,si)=>{
+    const def = SERVICE_QUESTIONS[svc];
+    if(!def) return;
+
+    // Section header if multiple services
+    if(svcs.length > 1){
+      const hdr = document.createElement('div');
+      hdr.className = 'svc-section-header';
+      hdr.style.marginTop = si > 0 ? '28px' : '0';
+      hdr.innerHTML = `<span class="svc-section-icon">${def.label.split(' ')[0]}</span><span class="svc-section-name">${def.label.slice(2)}</span>`;
+      container.appendChild(hdr);
+    }
+
+    def.questions.forEach(q=>{
+      const wrap = document.createElement('div');
+      wrap.style.marginBottom = '22px';
+
+      const label = document.createElement('div');
+      label.style.cssText = 'font-size:14px;font-weight:600;color:var(--fg);margin-bottom:10px;line-height:1.4';
+      label.textContent = q.q;
+      wrap.appendChild(label);
+
+      if(q.type === 'radio'){
+        const list = document.createElement('div');
+        list.className = 'radio-list';
+        list.style.marginBottom = '0';
+        q.opts.forEach(opt=>{
+          const item = document.createElement('div');
+          item.className = 'radio-opt';
+          item.dataset.qid = q.id;
+          item.dataset.val = opt;
+          item.innerHTML = `<div class="radio-dot"></div><span class="radio-label">${opt}</span>`;
+          item.onclick = function(){
+            list.querySelectorAll('.radio-opt').forEach(r=>r.classList.remove('selected'));
+            this.classList.add('selected');
+            state.answers[q.id] = opt;
+          };
+          // Restore if already answered
+          if(state.answers[q.id] === opt) item.classList.add('selected');
+          list.appendChild(item);
+        });
+        wrap.appendChild(list);
+
+      } else if(q.type === 'check'){
+        const list = document.createElement('div');
+        list.className = 'check-list';
+        list.style.marginBottom = '0';
+        q.opts.forEach(opt=>{
+          const item = document.createElement('div');
+          item.className = 'check-opt';
+          item.innerHTML = `<div class="check-box">✓</div><span class="check-label">${opt}</span>`;
+          // Restore
+          if(Array.isArray(state.answers[q.id]) && state.answers[q.id].includes(opt)) item.classList.add('selected');
+          item.onclick = function(){
+            this.classList.toggle('selected');
+            const checked = [...list.querySelectorAll('.check-opt.selected')].map(c=>c.querySelector('.check-label').textContent);
+            state.answers[q.id] = checked;
+          };
+          list.appendChild(item);
+        });
+        wrap.appendChild(list);
+      }
+
+      container.appendChild(wrap);
+    });
+  });
+}
+
+// ── PROGRESS UPDATE ──
+function updateProgress(step){
+  const total = 3;
+  const pct = Math.round(((step-1)/(total)) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Paso ${step} de ${total}`;
+  document.getElementById('progressPct').textContent = pct + '%';
+  document.getElementById('microcopy').textContent = MICROCOPY[step-1] || '';
+}
+
+// ── NAVIGATION ──
+function showStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  const el = document.getElementById('step'+n);
+  if(el) el.classList.add('active');
+  state.currentStep = n;
+  updateProgress(n);
+  // GA4 step tracking
+  gtag('event','form_step',{step:n,services:state.selectedServices.join(',')});
+}
+
+function goNext(){
+  const cur = state.currentStep;
+
+  if(cur === 1){
+    if(state.selectedServices.length === 0){
+      document.getElementById('step1-error').style.display = 'block';
+      return;
+    }
+    buildStep2();
+    showStep(2);
+    return;
+  }
+
+  if(cur === 2){
+    showStep(3);
+    return;
+  }
+}
+
+function goBack(from){
+  if(from === 2) showStep(1);
+  if(from === 3) showStep(2);
+}
+
+// ── SCORING ──
+function calculateScore(){
+  let score = 0;
+
+  // Bonus per selected service
+  score += state.selectedServices.length * 1;
+
+  // Per-answer scoring
+  state.selectedServices.forEach(svc=>{
+    const def = SERVICE_QUESTIONS[svc];
+    if(!def) return;
+    def.questions.forEach(q=>{
+      const ans = state.answers[q.id];
+      if(!ans) return;
+      if(q.type === 'radio' && q.score[ans] !== undefined){
+        score += q.score[ans];
+      }
+      if(q.type === 'check' && q.score.multiple && Array.isArray(ans)){
+        score += Math.min(ans.length, 3); // cap at 3 for multi-check
+      }
+    });
+  });
+
+  // Contact bonus
+  if(document.getElementById('f-web').value.trim()) score += 1;
+
+  return score;
+}
+
+function getTemperature(score){
+  if(score >= 10) return 'HOT';
+  if(score >= 5)  return 'WARM';
+  return 'COLD';
+}
+
+// ── SUBMIT ──
+async function submitForm(){
+  // Validate
+  let valid = true;
+  const name  = document.getElementById('f-name').value.trim();
+  const biz   = document.getElementById('f-biz').value.trim();
+  const wa    = document.getElementById('f-wa').value.trim();
+
+  [['field-name','f-name',name],['field-biz','f-biz',biz],['field-wa','f-wa',wa]].forEach(([fid,iid,val])=>{
+    const field = document.getElementById(fid);
+    const inp   = document.getElementById(iid);
+    if(!val){
+      field.classList.add('has-error');
+      inp.classList.add('error');
+      valid = false;
+    } else {
+      field.classList.remove('has-error');
+      inp.classList.remove('error');
+    }
+  });
+
+  if(!valid) return;
+
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  document.getElementById('submitText').textContent = 'Enviando…';
+
+  // Score
+  const score       = calculateScore();
+  const temperature = getTemperature(score);
+  state.score       = score;
+  state.temperature = temperature;
+
+  // Build answers object
+  const answersFlat = {...state.answers};
+
+  // UTM
+  const utm = getUTM();
+
+  // Supabase payload
+  const payload = {
+    business_type      : biz,
+    acquisition_source : 'agendar-form',
+    website_or_social  : document.getElementById('f-web').value.trim() || document.getElementById('f-social').value.trim(),
+    monthly_ad_budget  : answersFlat.ads_budget || '',
+    main_problem       : JSON.stringify(state.selectedServices),
+    intent             : answersFlat.web_urgency || answersFlat.ia_automate || '',
+    urgency            : answersFlat.web_urgency || '',
+    lead_score         : score,
+    lead_temperature   : temperature,
+    // Extended fields stored as JSON in intent column
+  };
+
+  await saveLead(payload);
+
+  // GA4 conversion
+  gtag('event','lead_submitted',{lead_temperature:temperature,lead_score:score,services:state.selectedServices.join(',')});
+
+  // Route
+  routeLead(temperature, score);
+}
+
+function routeLead(temp, score){
+  // Hide form
+  document.getElementById('formSteps').style.display = 'none';
+  document.getElementById('progressWrap').style.display = 'none';
+
+  const waTextHot  = encodeURIComponent('Hola, acabo de completar mi solicitud de auditoría estratégica. ¿Cuándo podemos hablar?');
+  const waTextWarm = encodeURIComponent('Hola, completé el formulario en su sitio web y me gustaría más información.');
+
+  if(temp === 'HOT'){
+    document.getElementById('hotWaLink').href = `https://wa.me/5216141425512?text=${waTextHot}`;
+    document.getElementById('resultHot').classList.add('show');
+    setTimeout(()=>window.open(`https://wa.me/5216141425512?text=${waTextHot}`,'_blank'), 2000);
+  } else if(temp === 'WARM'){
+    document.getElementById('warmWaLink').href = `https://wa.me/5216141425512?text=${waTextWarm}`;
+    document.getElementById('resultWarm').classList.add('show');
+    setTimeout(()=>window.open(`https://wa.me/5216141425512?text=${waTextWarm}`,'_blank'), 2500);
+  } else {
+    document.getElementById('resultCold').classList.add('show');
+  }
+}
+
+// ── INIT ──
+preselectFromURL();
+updateProgress(1);
+</script>
+</body>
+</html>
