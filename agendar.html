@@ -316,19 +316,34 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:28px 0}
           </div>
         </div>
         <div class="field">
-          <label>Correo electrónico</label>
+          <label>Correo electrónico <span class="optional-label">(opcional)</span></label>
           <input type="email" id="f-email" placeholder="tu@correo.com"/>
+        </div>
+
+        <!-- PRESENCIA DIGITAL -->
+        <div style="margin:24px 0 16px;padding-top:20px;border-top:1px solid var(--border2)">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--copper);margin-bottom:4px">Presencia digital actual</div>
+          <div style="font-size:13px;color:var(--fg3)">Nos ayuda a preparar mejor tu auditoría. Todo es opcional.</div>
+        </div>
+        <div class="field">
+          <label>Sitio web actual <span class="optional-label">(si ya tienes uno)</span></label>
+          <input type="url" id="f-web" placeholder="https://tuempresa.com"/>
         </div>
         <div class="fields-2">
           <div class="field">
-            <label>Sitio web <span class="optional-label">(opcional)</span></label>
-            <input type="text" id="f-web" placeholder="www.minegocio.com"/>
+            <label>Instagram de tu negocio <span class="optional-label">(opcional)</span></label>
+            <input type="text" id="f-instagram" placeholder="@tunegocio"/>
           </div>
           <div class="field">
-            <label>Redes sociales <span class="optional-label">(opcional)</span></label>
-            <input type="text" id="f-social" placeholder="@minegocio"/>
+            <label>Facebook de tu negocio <span class="optional-label">(opcional)</span></label>
+            <input type="text" id="f-facebook" placeholder="facebook.com/tunegocio"/>
           </div>
         </div>
+        <div class="field">
+          <label>Perfil de Google Maps <span class="optional-label">(si tienes ficha)</span></label>
+          <input type="text" id="f-gmaps" placeholder="Pega aquí el enlace de tu ficha de Google"/>
+        </div>
+
         <div class="step-nav">
           <button class="btn-back" onclick="goBack(3)">← Atrás</button>
           <button class="btn-submit" id="submitBtn" onclick="submitForm()">
@@ -401,14 +416,31 @@ const SUPABASE_URL  = 'https://zzjqnawcwevwyzpcxebi.supabase.co';
 const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6anFuYXdjd2V2d3l6cGN4ZWJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg3NTI0MDUsImV4cCI6MjA5NDMyODQwNX0.xfeYBIXy65evEFXyMjp9o6Ek1AvG4wn6z3TwVrjqWNI';
 
 async function saveLead(payload){
+  console.log('📤 Enviando lead a Supabase...', JSON.stringify(payload, null, 2));
   try{
     const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`,{
       method:'POST',
-      headers:{'Content-Type':'application/json','apikey':SUPABASE_ANON,'Authorization':`Bearer ${SUPABASE_ANON}`,'Prefer':'return=minimal'},
+      headers:{
+        'Content-Type'  :'application/json',
+        'apikey'        : SUPABASE_ANON,
+        'Authorization' :`Bearer ${SUPABASE_ANON}`,
+        'Prefer'        :'return=representation',
+      },
       body:JSON.stringify(payload)
     });
-    return res.ok;
-  }catch(e){console.warn('Supabase error:',e);return false;}
+    const text = await res.text();
+    if(res.ok){
+      console.log('✅ Lead guardado en Supabase:', text);
+      return true;
+    } else {
+      console.error('❌ Error Supabase — Status:', res.status, res.statusText);
+      console.error('❌ Detalle del error:', text);
+      return false;
+    }
+  }catch(e){
+    console.error('❌ Error de red al conectar con Supabase:', e);
+    return false;
+  }
 }
 
 // ── UTM PARAMS ──
@@ -643,8 +675,12 @@ function calculateScore(){
     });
   });
 
-  // Contact bonus
-  if(document.getElementById('f-web').value.trim()) score += 1;
+  // Contact bonus — has website or any social
+  const webVal = document.getElementById('f-web').value.trim();
+  const igVal  = document.getElementById('f-instagram').value.trim();
+  const fbVal  = document.getElementById('f-facebook').value.trim();
+  const gmVal  = document.getElementById('f-gmaps').value.trim();
+  if(webVal || igVal || fbVal || gmVal) score += 1;
 
   return score;
 }
@@ -688,30 +724,64 @@ async function submitForm(){
   state.score       = score;
   state.temperature = temperature;
 
+  // Collect all field values
+  const nombre   = document.getElementById('f-name').value.trim();
+  const negocio  = document.getElementById('f-biz').value.trim();
+  const telefono = document.getElementById('f-wa').value.trim();
+  const email    = document.getElementById('f-email').value.trim();
+  const ciudad   = document.getElementById('f-city').value.trim();
+  const sitioWeb = document.getElementById('f-web').value.trim();
+  const instagram= document.getElementById('f-instagram').value.trim();
+  const facebook = document.getElementById('f-facebook').value.trim();
+  const gmaps    = document.getElementById('f-gmaps').value.trim();
+
   // Build answers object
   const answersFlat = {...state.answers};
 
   // UTM
   const utm = getUTM();
 
-  // Supabase payload
+  // Supabase payload — column names match EXACTLY what's in the table
   const payload = {
-    business_type      : biz,
-    acquisition_source : 'agendar-form',
-    website_or_social  : document.getElementById('f-web').value.trim() || document.getElementById('f-social').value.trim(),
-    monthly_ad_budget  : answersFlat.ads_budget || '',
-    main_problem       : JSON.stringify(state.selectedServices),
-    intent             : answersFlat.web_urgency || answersFlat.ia_automate || '',
-    urgency            : answersFlat.web_urgency || '',
-    lead_score         : score,
-    lead_temperature   : temperature,
-    // Extended fields stored as JSON in intent column
+    // Contact
+    nombre              : nombre,
+    negocio             : negocio,
+    telefono            : telefono,
+    email               : email,
+    ciudad              : ciudad,
+    // Digital presence
+    sitio_web           : sitioWeb,
+    instagram           : instagram,
+    facebook            : facebook,
+    google_maps         : gmaps,
+    // Lead data
+    business_type       : negocio,
+    acquisition_source  : 'agendar-form',
+    website_or_social   : sitioWeb || instagram || facebook || gmaps,
+    monthly_ad_budget   : answersFlat.ads_budget || '',
+    main_problem        : JSON.stringify(state.selectedServices),
+    servicios_sel       : JSON.stringify(state.selectedServices),
+    respuestas          : JSON.stringify(answersFlat),
+    intent              : answersFlat.web_urgency || '',
+    urgency             : answersFlat.web_urgency || '',
+    lead_score          : score,
+    lead_temperature    : temperature,
+    // UTM tracking
+    utm_source          : utm.utm_source,
+    utm_medium          : utm.utm_medium,
+    utm_campaign        : utm.utm_campaign,
+    source              : utm.source,
   };
 
-  await saveLead(payload);
+  console.log('🎯 Score:', score, '| Temperatura:', temperature);
+
+  const saved = await saveLead(payload);
+  if(!saved) console.warn('⚠️ Lead no guardado en Supabase — revisar SQL Editor para errores de RLS o columnas.');
 
   // GA4 conversion
-  gtag('event','lead_submitted',{lead_temperature:temperature,lead_score:score,services:state.selectedServices.join(',')});
+  if(typeof gtag !== 'undefined'){
+    gtag('event','lead_submitted',{lead_temperature:temperature,lead_score:score,services:state.selectedServices.join(',')});
+  }
 
   // Route
   routeLead(temperature, score);
