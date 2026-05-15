@@ -48,6 +48,20 @@ p{color:var(--fg2)}
 .nav-links a{color:var(--fg2);text-decoration:none;font-size:14px;font-weight:500;transition:color .2s;position:relative}
 .nav-links a:hover,.nav-links a.active{color:var(--fg)}
 .nav-links a.active::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--copper)}
+/* Dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:var(--fg2);font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:var(--font-b);padding:0}
+.nav-dropdown-trigger:hover{color:var(--fg)}
+.nav-dropdown-arrow{width:14px;height:14px;transition:transform .25s ease;opacity:.6}
+.nav-dropdown.open .nav-dropdown-arrow{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-8px);background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:8px;min-width:220px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:300;box-shadow:0 24px 48px rgba(0,0,0,.5)}
+.nav-dropdown.open .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.nav-dropdown-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:8px;text-decoration:none;color:var(--fg2);font-size:13px;font-weight:500;transition:all .18s;white-space:nowrap}
+.nav-dropdown-item:hover{background:rgba(200,121,58,.08);color:var(--fg)}
+.nav-dropdown-item-icon{width:30px;height:30px;border-radius:7px;background:rgba(200,121,58,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:background .18s}
+.nav-dropdown-item:hover .nav-dropdown-item-icon{background:rgba(200,121,58,.18)}
+.nav-dropdown-item-text strong{display:block;font-size:12px;font-weight:600;color:var(--fg);font-family:var(--font-h)}
+.nav-dropdown-item-text span{font-size:11px;color:var(--fg3)}
 .nav-r{display:flex;gap:12px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
 .burger span{display:block;width:22px;height:1.5px;background:var(--fg);border-radius:2px;transition:all .3s}
@@ -177,24 +191,49 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:48px 0 
   <div class="wrap nav-i">
     <a href="/" class="logo"><em>E</em>STRATO MARKETING</a>
     <div class="nav-links">
-      <a href="/">Inicio</a>
-      <a href="estratomarketing.html#sistema">El Sistema</a>
-      <a href="estratomarketing.html#servicios">Servicios</a>
-      <a href="blog.html" class="active">Blog</a>
-      <a href="recursos.html">Recursos</a>
+      <a href="/#sistema">El Sistema</a>
+      <div class="nav-dropdown" id="navDropdown">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown()" aria-expanded="false">
+          Servicios
+          <svg class="nav-dropdown-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="/servicios/google-business.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">📍</div>
+            <div class="nav-dropdown-item-text"><strong>Ficha de Google</strong><span>Google Business Profile</span></div>
+          </a>
+          <a href="/servicios/webs-personalizadas.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">🌐</div>
+            <div class="nav-dropdown-item-text"><strong>Webs Personalizadas</strong><span>Diseño web de alto impacto</span></div>
+          </a>
+          <a href="/servicios/ads-meta-google.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">📣</div>
+            <div class="nav-dropdown-item-text"><strong>Ads Meta & Google</strong><span>Tráfico que convierte</span></div>
+          </a>
+          <a href="/servicios/ia-whatsapp.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">🤖</div>
+            <div class="nav-dropdown-item-text"><strong>IA + WhatsApp 24/7</strong><span>Automatización inteligente</span></div>
+          </a>
+        </div>
+      </div>
+      <a href="/#resultados">Resultados</a>
+      <a href="/blog.html" class="active">Blog</a>
+      <a href="/recursos.html">Recursos</a>
     </div>
     <div class="nav-r">
-      <a href="recursos.html" class="btn btn-ghost" style="padding:9px 18px;font-size:13px">Recursos</a>
-      <a href="/" class="btn btn-copper" style="padding:9px 18px;font-size:13px">Auditoría Gratis</a>
+      <a href="/recursos.html" class="btn btn-ghost" style="padding:9px 18px;font-size:13px">Recursos</a>
+      <a href="/agendar.html" class="btn btn-copper" style="padding:9px 18px;font-size:13px">Auditoría Gratis</a>
     </div>
     <button class="burger" id="burger"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="m-menu" id="mmenu">
   <a href="/" onclick="closeMM()">Inicio</a>
-  <a href="blog.html" onclick="closeMM()">Blog</a>
-  <a href="recursos.html" onclick="closeMM()">Recursos</a>
-  <a href="/" class="btn btn-copper" style="font-size:15px;padding:14px 32px">Auditoría Gratis</a>
+  <a href="/#sistema" onclick="closeMM()">El Sistema</a>
+  <a href="/#servicios" onclick="closeMM()">Servicios</a>
+  <a href="/blog.html" onclick="closeMM()">Blog</a>
+  <a href="/recursos.html" onclick="closeMM()">Recursos</a>
+  <a href="/agendar.html" class="btn btn-copper" style="font-size:15px;padding:14px 32px">Auditoría Gratis</a>
 </div>
 
 <!-- HERO -->
@@ -509,9 +548,10 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:48px 0 
       <div class="ft-logo"><em>E</em>STRATO MARKETING</div>
       <div class="ft-links">
         <a href="/">Inicio</a>
-        <a href="blog.html">Blog</a>
-        <a href="recursos.html">Recursos</a>
-        <a href="estratomarketing.html#servicios">Servicios</a>
+        <a href="/blog.html">Blog</a>
+        <a href="/recursos.html">Recursos</a>
+        <a href="/#servicios">Servicios</a>
+        <a href="/agendar.html">Auditoría Gratis</a>
         <a href="https://wa.me/5216141425512">WhatsApp</a>
       </div>
     </div>
@@ -527,6 +567,11 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>50),{passive:true});
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mmenu').classList.toggle('on'));
 function closeMM(){document.getElementById('mmenu').classList.remove('on')}
+// Dropdown
+const navDropdown=document.getElementById('navDropdown');
+function toggleDropdown(){navDropdown.classList.toggle('open');navDropdown.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded',navDropdown.classList.contains('open'))}
+document.addEventListener('click',e=>{if(navDropdown&&!navDropdown.contains(e.target))navDropdown.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navDropdown)navDropdown.classList.remove('open')});
 const ro=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*55);ro.unobserve(e.target)}})},{threshold:.06});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 // Topic filter
