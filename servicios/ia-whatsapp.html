@@ -99,6 +99,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:40px 0 
 .ft-bottom{border-top:1px solid var(--border2);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .ft-bottom p{font-size:12px;color:var(--fg3)}
 .rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}.rv.in{opacity:1;transform:translateY(0)}
+
+/* Dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown-trigger{display:flex;align-items:center;gap:5px;color:var(--fg2);font-size:14px;font-weight:500;cursor:pointer;transition:color .2s;background:none;border:none;font-family:var(--font-b);padding:0}
+.nav-dropdown-trigger:hover{color:var(--fg)}
+.nav-dropdown-arrow{width:14px;height:14px;transition:transform .25s ease;opacity:.6}
+.nav-dropdown.open .nav-dropdown-arrow{transform:rotate(180deg)}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(-8px);background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:8px;min-width:220px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:300;box-shadow:0 24px 48px rgba(0,0,0,.5)}
+.nav-dropdown.open .nav-dropdown-menu{opacity:1;pointer-events:all;transform:translateX(-50%) translateY(0)}
+.nav-dropdown-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:8px;text-decoration:none;color:var(--fg2);font-size:13px;font-weight:500;transition:all .18s;white-space:nowrap}
+.nav-dropdown-item:hover{background:rgba(200,121,58,.08);color:var(--fg)}
+.nav-dropdown-item-icon{width:30px;height:30px;border-radius:7px;background:rgba(200,121,58,.1);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:background .18s}
+.nav-dropdown-item:hover .nav-dropdown-item-icon{background:rgba(200,121,58,.18)}
+.nav-dropdown-item-text strong{display:block;font-size:12px;font-weight:600;color:var(--fg);font-family:var(--font-h)}
+.nav-dropdown-item-text span{font-size:11px;color:var(--fg3)}
 </style>
 </head>
 <body>
@@ -107,8 +122,30 @@ footer{background:var(--bg2);border-top:1px solid var(--border2);padding:40px 0 
     <a href="/" class="logo"><em>E</em>STRATO MARKETING</a>
     <div class="nav-links">
       <a href="/#sistema">El Sistema</a>
-      <a href="/#servicios" style="color:var(--copper)">Servicios</a>
-      <a href="/#resultados">Resultados</a>
+      <div class="nav-dropdown" id="navDropdown">
+        <button class="nav-dropdown-trigger" onclick="toggleDropdown()" aria-expanded="false">
+          Servicios
+          <svg class="nav-dropdown-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="/servicios/google-business.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">📍</div>
+            <div class="nav-dropdown-item-text"><strong>Ficha de Google</strong><span>Google Business Profile</span></div>
+          </a>
+          <a href="/servicios/webs-personalizadas.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">🌐</div>
+            <div class="nav-dropdown-item-text"><strong>Webs Personalizadas</strong><span>Diseño web de alto impacto</span></div>
+          </a>
+          <a href="/servicios/ads-meta-google.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">📣</div>
+            <div class="nav-dropdown-item-text"><strong>Ads Meta & Google</strong><span>Tráfico que convierte</span></div>
+          </a>
+          <a href="/servicios/ia-whatsapp.html" class="nav-dropdown-item">
+            <div class="nav-dropdown-item-icon">🤖</div>
+            <div class="nav-dropdown-item-text"><strong>IA + WhatsApp 24/7</strong><span>Automatización inteligente</span></div>
+          </a>
+        </div>
+      </div>
       <a href="/blog.html">Blog</a>
       <a href="/recursos.html">Recursos</a>
     </div>
@@ -266,6 +303,14 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>50),{passive:true});
 document.getElementById('burger').addEventListener('click',()=>document.getElementById('mmenu').classList.toggle('on'));
 function closeMM(){document.getElementById('mmenu').classList.remove('on')}
+const navDropdown=document.getElementById('navDropdown');
+function toggleDropdown(){
+  if(!navDropdown) return;
+  navDropdown.classList.toggle('open');
+  navDropdown.querySelector('.nav-dropdown-trigger').setAttribute('aria-expanded', navDropdown.classList.contains('open'));
+}
+document.addEventListener('click',e=>{if(navDropdown&&!navDropdown.contains(e.target))navDropdown.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navDropdown)navDropdown.classList.remove('open')});
 const ro=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*60);ro.unobserve(e.target)}})},{threshold:.08});
 document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
 </script>
